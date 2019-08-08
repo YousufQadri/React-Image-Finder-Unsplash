@@ -11,6 +11,9 @@
 # production
 /build
 
+# My API file
+src/api/unsplashApi.js
+
 # misc
 .DS_Store
 .env.local
