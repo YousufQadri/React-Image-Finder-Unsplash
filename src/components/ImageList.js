@@ -2,12 +2,16 @@ import React from "react";
 import "./ImageList.css";
 import ImageCard from "./ImageCard";
 
-const ImageList = props => {
-  const images = props.images.map(image => {
+const ImageList = ({ images, response }) => {
+  const imagesOutput = images.map(image => {
     return <ImageCard key={image.id} images={image} />;
   });
 
-  return <div className="image-list">{images}</div>;
+  return response ? (
+    <div class="ui active centered inline loader"></div>
+  ) : (
+    <div className="image-list">{imagesOutput}</div>
+  );
 };
 
 export default ImageList;
